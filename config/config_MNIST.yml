@@ -25,6 +25,13 @@ in_chans: 1
 loss_function_name: BCEWithLogitsLoss
 data_balance: False
 checkpoint_path: null
+seed: 0
+early_stopping: True
+patience: 3
+default_root_dir: save/
+gpus: 1
+precision: 32
+max_epochs: 100
 
 # transforms configuration
 transforms_config:
