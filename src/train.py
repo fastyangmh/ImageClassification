@@ -22,6 +22,7 @@ class Train(BaseTrain):
             gpus=project_parameters.gpus,
             precision=project_parameters.precision,
             max_epochs=project_parameters.max_epochs)
+        self.config = project_parameters.config
 
     def train(self) -> Any:
         self.trainer.fit(model=self.model, datamodule=self.datamodule)
@@ -36,7 +37,7 @@ class Train(BaseTrain):
             result[stage] = self.trainer.test(dataloaders=dataloader,
                                               ckpt_path='best')[0]
         # copy config to save directory
-        copy2(project_parameters.config, self.trainer.log_dir)
+        copy2(self.config, self.trainer.log_dir)
         return result
 
 
