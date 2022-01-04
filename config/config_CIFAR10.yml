@@ -42,8 +42,8 @@ num_samples: 100
 transforms_config:
   train:
     Resize:
-      - 224
-      - 224
+      - 32
+      - 32
     ColorJitter:
     RandomRotation: 90
     ToTensor:
@@ -51,20 +51,20 @@ transforms_config:
 
   val:
     Resize:
-      - 224
-      - 224
+      - 32
+      - 32
     ToTensor:
 
   test:
     Resize:
-      - 224
-      - 224
+      - 32
+      - 32
     ToTensor:
 
   predict:
     Resize:
-      - 224
-      - 224
+      - 32
+      - 32
     ToTensor:
 
 # target transforms configuration
