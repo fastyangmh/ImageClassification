@@ -72,7 +72,8 @@ class PredictGUI(BasePredictGUI):
     def run(self):
         if self.web_interface:
             gr.Interface(fn=self.inference,
-                         inputs=gr.inputs.Image(image_mode=self.color_space),
+                         inputs=gr.inputs.Image(image_mode=self.color_space,
+                                                type='filepath'),
                          outputs='label',
                          examples=self.examples,
                          interpretation="default").launch(share=True,
