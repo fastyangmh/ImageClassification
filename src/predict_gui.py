@@ -21,7 +21,8 @@ class PredictGUI(BasePredictGUI):
             transforms_config=project_parameters.transforms_config)['predict']
         self.color_space = project_parameters.color_space
         self.web_interface = project_parameters.web_interface
-        self.examples = project_parameters.examples if len(project_parameters.examples) else None
+        self.examples = project_parameters.examples if len(
+            project_parameters.examples) else None
 
         # label
         self.image_label = Label(master=self.window)
@@ -74,7 +75,8 @@ class PredictGUI(BasePredictGUI):
                          inputs=gr.inputs.Image(image_mode=self.color_space),
                          outputs='label',
                          examples=self.examples,
-                         interpretation="default").launch(share=True)
+                         interpretation="default").launch(share=True,
+                                                          inbrowser=True)
         else:
             # NW
             self.open_file_button.pack(anchor=tk.NW)
