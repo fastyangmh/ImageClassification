@@ -28,11 +28,20 @@ checkpoint_path: pretrained/CIFAR10_test_accuracy_0.612220447284345/checkpoints/
 seed: 0
 early_stopping: True
 patience: 3
-default_root_dir: save/save_CIFAR10/
+default_root_dir: save/
 gpus: 1
 precision: 32
 max_epochs: 100
 color_space: RGB # (3x8-bit pixels, true color)
+web_interface: True
+examples:
+  [
+    "examples/CIFAR10/appaloosa_s_001946.png",
+    "examples/CIFAR10/auto_s_000561.png",
+    "examples/CIFAR10/bufo_marinus_s_001549.png",
+    "examples/CIFAR10/gondola_s_000055.png",
+    "examples/CIFAR10/wrecker_s_001908.png",
+  ]
 tuning_test: False
 cpu_resources_per_trial: 1
 gpu_resources_per_trial: 0.5
