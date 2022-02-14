@@ -28,7 +28,7 @@ checkpoint_path: pretrained/CIFAR10_test_accuracy_0.612220447284345/checkpoints/
 seed: 0
 early_stopping: True
 patience: 3
-default_root_dir: save/save_CIFAR10/
+default_root_dir: save/
 gpus: 1
 precision: 32
 max_epochs: 100

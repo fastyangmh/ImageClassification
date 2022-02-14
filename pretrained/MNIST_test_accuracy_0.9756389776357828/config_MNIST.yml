@@ -28,7 +28,7 @@ checkpoint_path: pretrained/MNIST_test_accuracy_0.9756389776357828/checkpoints/e
 seed: 0
 early_stopping: True
 patience: 3
-default_root_dir: save/save_MNIST/
+default_root_dir: save/
 gpus: 1
 precision: 32
 max_epochs: 100
