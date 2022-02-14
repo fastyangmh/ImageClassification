@@ -47,6 +47,8 @@ def load_from_checkpoint(
 
 
 def create_model(project_parameters):
+    if project_parameters.data_balance and project_parameters.mode != 'train':
+        project_parameters.data_balance = False
     model = SupervisedModel(
         optimizers_config=project_parameters.optimizers_config,
         lr=project_parameters.lr,
