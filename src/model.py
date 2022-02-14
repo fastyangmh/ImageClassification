@@ -50,6 +50,9 @@ def create_model(project_parameters):
     if project_parameters.data_balance and project_parameters.mode not in [
             'train', 'tuning'
     ]:
+        print(
+            'please check the data_balance and mode arguments.\nyou set data_balance to True,\nbut these arguments are only valid in training and tuning mode.'
+        )
         project_parameters.data_balance = False
     model = SupervisedModel(
         optimizers_config=project_parameters.optimizers_config,
