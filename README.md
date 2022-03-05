@@ -1,4 +1,5 @@
 # ImageClassification
+This repository is used for image classification task and provides training, prediction, prediction GUI, prediction Web GUI, hyperparameters tuning, and pretrained models.
 
 ## Installation
 
