@@ -50,49 +50,49 @@ num_samples: 100
 # transforms configuration
 transforms_config:
   train:
-    Resize:
+    torchvision.Resize:
       - 32
       - 32
-    ColorJitter:
-    RandomRotation: 90
-    ToTensor:
-    RandomErasing:
+    torchvision.ColorJitter:
+    torchvision.RandomRotation: 90
+    torchvision.ToTensor:
+    torchvision.RandomErasing:
 
   val:
-    Resize:
+    torchvision.Resize:
       - 32
       - 32
-    ToTensor:
+    torchvision.ToTensor:
 
   test:
-    Resize:
+    torchvision.Resize:
       - 32
       - 32
-    ToTensor:
+    torchvision.ToTensor:
 
   predict:
-    Resize:
+    torchvision.Resize:
       - 32
       - 32
-    ToTensor:
+    torchvision.ToTensor:
 
 # target transforms configuration
 target_transforms_config:
   train:
-    LabelSmoothing:
+    selfdefined.LabelSmoothing:
       alpha: 0.2
       num_classes: null
 
   val:
-    OneHotEncoder:
+    selfdefined.OneHotEncoder:
       num_classes: null
 
   test:
-    OneHotEncoder:
+    selfdefined.OneHotEncoder:
       num_classes: null
 
   predict:
-    OneHotEncoder:
+    selfdefined.OneHotEncoder:
       num_classes: null
 
 # optimizers configuration
