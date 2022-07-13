@@ -18,9 +18,8 @@ def main():
     if project_parameters.mode == 'train':
         result = Train(project_parameters=project_parameters).train()
     elif project_parameters.mode == 'predict':
-        result = Predict(project_parameters=project_parameters)
         result = Predict(project_parameters=project_parameters).predict(
-            filepath=project_parameters.root)
+            inputs=project_parameters.root)
     elif project_parameters.mode == 'predict_gui':
         from src.predict_gui import PredictGUI
         result = PredictGUI(project_parameters=project_parameters).run()
