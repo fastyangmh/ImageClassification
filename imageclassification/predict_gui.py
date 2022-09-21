@@ -1,9 +1,9 @@
 # import
-from src.project_parameters import ProjectParameters
-from DeepLearningTemplate.predict_gui import BasePredictGUI
-from src.predict import Predict
+from imageclassification.project_parameters import ProjectParameters
+from deeplearningtemplate.predict_gui import BasePredictGUI
+from imageclassification.predict import Predict
 from PIL import Image, ImageTk
-from DeepLearningTemplate.data_preparation import parse_transforms
+from deeplearningtemplate.data_preparation import parse_transforms
 from tkinter import Label, messagebox
 import tkinter as tk
 import gradio as gr

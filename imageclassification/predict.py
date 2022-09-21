@@ -1,9 +1,9 @@
 # import
-from src.project_parameters import ProjectParameters
-from DeepLearningTemplate.predict import ImagePredictDataset
-from src.model import create_model
+from imageclassification.project_parameters import ProjectParameters
+from deeplearningtemplate.predict import ImagePredictDataset
+from imageclassification.model import create_model
 import torch
-from DeepLearningTemplate.data_preparation import parse_transforms
+from deeplearningtemplate.data_preparation import parse_transforms
 from typing import Any
 from os.path import isfile
 from PIL import Image

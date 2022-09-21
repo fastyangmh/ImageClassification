@@ -1,6 +1,6 @@
 # import
-from src.project_parameters import ProjectParameters
-from DeepLearningTemplate.tuning import BaseTuning
+from imageclassification.project_parameters import ProjectParameters
+from deeplearningtemplate.tuning import BaseTuning
 from ray import tune
 from copy import deepcopy
 from typing import Any
@@ -10,7 +10,7 @@ from ray.tune import CLIReporter
 import ray
 from functools import partial
 from os.path import join
-from src.train import Train
+from imageclassification.train import Train
 
 
 # class

@@ -1,6 +1,6 @@
 # import
-from src.project_parameters import ProjectParameters
-from DeepLearningTemplate.model import BaseModel, load_from_checkpoint_for_supervised_model
+from imageclassification.project_parameters import ProjectParameters
+from deeplearningtemplate.model import BaseModel, load_from_checkpoint_for_supervised_model
 import timm
 from os.path import isfile
 import torch.nn as nn

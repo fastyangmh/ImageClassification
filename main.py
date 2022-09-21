@@ -1,8 +1,8 @@
 # import
-from src.project_parameters import ProjectParameters
-from src.train import Train
-from src.predict import Predict
-from src.tuning import Tuning
+from imageclassification.project_parameters import ProjectParameters
+from imageclassification.train import Train
+from imageclassification.predict import Predict
+from imageclassification.tuning import Tuning
 
 
 # def
@@ -21,7 +21,7 @@ def main():
         result = Predict(project_parameters=project_parameters).predict(
             inputs=project_parameters.root)
     elif project_parameters.mode == 'predict_gui':
-        from src.predict_gui import PredictGUI
+        from imageclassification.predict_gui import PredictGUI
         result = PredictGUI(project_parameters=project_parameters).run()
     elif project_parameters.mode == 'tuning':
         result = Tuning(project_parameters=project_parameters,
