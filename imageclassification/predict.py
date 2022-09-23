@@ -29,7 +29,14 @@ class Predict:
 
     def predict(self, inputs) -> Any:
         result = []
-        if isfile(path=inputs):
+        if type(inputs) == Image.Image:
+            # the transformed sample dimension is (1, in_chans, width, height)
+            sample = self.transform(inputs)[None]
+            if self.device == 'cuda' and torch.cuda.is_available():
+                sample = sample.cuda()
+            with torch.no_grad():
+                result.append(self.model(sample).tolist()[0])
+        elif isfile(path=inputs):
             # predict the file
             sample = self.loader(inputs).convert(self.color_space)
             # the transformed sample dimension is (1, in_chans, width, height)

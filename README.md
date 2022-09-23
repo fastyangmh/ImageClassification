@@ -5,6 +5,7 @@ This repository is used for image classification task and provides training, pre
 
 ```bash
 pip install -r requirements.txt
+pip install -e .
 ```
 
 ## Prepare dataset
