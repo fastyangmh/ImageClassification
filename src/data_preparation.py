@@ -1,26 +1,26 @@
-# import
-from src.project_parameters import ProjectParameters
-from DeepLearningTemplate.data_preparation import MyMNIST, MyCIFAR10, MyImageFolder, ImageLightningDataModule
+#import
+from DeepLearningTemplate import ProjectParameters, MyImageFolder, MyCIFAR10, MyMNIST, ImageLightningDataModule
 
 
-# def
+#def
 def create_datamodule(project_parameters):
     if project_parameters.predefined_dataset:
-        dataset_class = eval('My{}'.format(
+        dataset_cls = eval('My{}'.format(
             project_parameters.predefined_dataset))
     else:
-        dataset_class = MyImageFolder
+        dataset_cls = MyImageFolder
     return ImageLightningDataModule(
         root=project_parameters.root,
         predefined_dataset=project_parameters.predefined_dataset,
-        classes=project_parameters.classes,
-        max_samples=project_parameters.max_samples,
-        batch_size=project_parameters.batch_size,
-        num_workers=project_parameters.num_workers,
-        device=project_parameters.device,
+        dataset_cls=dataset_cls,
         transforms_config=project_parameters.transforms_config,
         target_transforms_config=project_parameters.target_transforms_config,
-        dataset_class=dataset_class)
+        max_samples=project_parameters.max_samples,
+        classes=project_parameters.classes,
+        batch_size=project_parameters.batch_size,
+        num_workers=project_parameters.num_workers,
+        accelerator=project_parameters.accelerator,
+        random_seed=project_parameters.random_seed)
 
 
 if __name__ == '__main__':
