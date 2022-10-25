@@ -64,8 +64,6 @@ class Predict:
                         sample = sample.cuda()
                     result.append(self.model(sample).tolist())
         result = np.concatenate(result, 0)
-        print(', '.join(self.classes))
-        print(result)
         return result
 
 
