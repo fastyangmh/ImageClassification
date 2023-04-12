@@ -1,8 +1,8 @@
 # import
-from src.project_parameters import ProjectParameters
-from DeepLearningTemplate.train import BaseTrain
-from src.data_preparation import create_datamodule
-from src.model import create_model
+from imageclassification.project_parameters import ProjectParameters
+from deeplearningtemplate.train import BaseTrain
+from imageclassification.data_preparation import create_datamodule
+from imageclassification.model import create_model
 from typing import Any
 from shutil import copy2
 

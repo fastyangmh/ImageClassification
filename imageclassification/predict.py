@@ -1,9 +1,9 @@
 # import
-from src.project_parameters import ProjectParameters
-from DeepLearningTemplate.predict import ImagePredictDataset
-from src.model import create_model
+from imageclassification.project_parameters import ProjectParameters
+from deeplearningtemplate.predict import ImagePredictDataset
+from imageclassification.model import create_model
 import torch
-from DeepLearningTemplate.data_preparation import parse_transforms
+from deeplearningtemplate.data_preparation import parse_transforms
 from typing import Any
 from os.path import isfile
 from PIL import Image
@@ -29,7 +29,14 @@ class Predict:
 
     def predict(self, inputs) -> Any:
         result = []
-        if isfile(path=inputs):
+        if type(inputs) == Image.Image:
+            # the transformed sample dimension is (1, in_chans, width, height)
+            sample = self.transform(inputs)[None]
+            if self.device == 'cuda' and torch.cuda.is_available():
+                sample = sample.cuda()
+            with torch.no_grad():
+                result.append(self.model(sample).tolist()[0])
+        elif isfile(path=inputs):
             # predict the file
             sample = self.loader(inputs).convert(self.color_space)
             # the transformed sample dimension is (1, in_chans, width, height)
@@ -57,8 +64,6 @@ class Predict:
                         sample = sample.cuda()
                     result.append(self.model(sample).tolist())
         result = np.concatenate(result, 0)
-        print(', '.join(self.classes))
-        print(result)
         return result
 
 

@@ -1,8 +1,7 @@
 # import
 import os
 import sys
-sys.path.append(os.path.realpath('DeepLearningTemplate/'))
-from DeepLearningTemplate.project_parameters import ProjectParameters
+from deeplearningtemplate.project_parameters import ProjectParameters
 
 if __name__ == '__main__':
     # project parameters

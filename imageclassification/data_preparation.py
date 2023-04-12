@@ -1,6 +1,6 @@
 # import
-from src.project_parameters import ProjectParameters
-from DeepLearningTemplate.data_preparation import MyMNIST, MyCIFAR10, MyImageFolder, ImageLightningDataModule
+from imageclassification.project_parameters import ProjectParameters
+from deeplearningtemplate.data_preparation import MyMNIST, MyCIFAR10, MyImageFolder, ImageLightningDataModule
 
 
 # def
